@@ -25,27 +25,19 @@ image_formats = {
                 'xbgr8888': 'XBGR8888',
                 'xrgb8888': 'XRBG8888',
                 'bgr888': 'BGR888',
-                'rgb888': 'RGB888',
-                'default': 'BGR888'
+                'rgb888': 'RGB888'
                 }
 
 focal_modes = {
-                'default': controls.AfModeEnum.Manual,
                 'manual': controls.AfModeEnum.Manual,
-                'automatic': controls.AfModeEnum.Auto,
-                'continuous': controls.AfModeEnum.Continuous                
+                'auto': controls.AfModeEnum.Auto,
+                'continuous': controls.AfModeEnum.Continuous
                 }
 
 file_formats = {
                 'jpg': 'jpg',
-                'jpeg': 'jpg',
                 'png': 'png',
-                'bmp': 'bmp',
-                '.jpg': 'jpg',
-                '.jpeg': 'jpg',
-                '.png': 'png',
-                '.bmp': 'bmp',
-                'default': 'jpg'
+                'bmp': 'bmp'
                 }
 
 def get_resolution(resolution: str):
@@ -54,12 +46,12 @@ def get_resolution(resolution: str):
     except KeyError:
         return resolutions['max']
 
-def get_image_format(format: str):
+def get_image_format(image_format: str):
     try:
-        return image_formats[format.lower()]
+        return image_formats[image_format.lower()]
     except KeyError:
-        return image_formats['default']
-        
+        return image_formats['bgr888']
+
 def get_image_quality(quality: int):
     if quality < 0:
         return 0
@@ -72,7 +64,7 @@ def get_focal_mode(focal_mode: str):
     try:
         return focal_modes[focal_mode.lower()]
     except KeyError:
-        return focal_modes['default']   
+        return focal_modes['auto']
 
 def get_focal_distance(focal_distance: float):
     if focal_distance <= 0.0:

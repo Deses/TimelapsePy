@@ -15,9 +15,11 @@ unique_directory_name = False  # Recommend keeping this default = False
 #                 Basic settings for capturing images
 # ======================================================================
 
-interval_in_seconds_between_capture = 10
+# Available file formats: 'jpg', 'png', 'bmp'.
+# Default is 'jpg'.
 image_file_format = 'jpg'
 
+interval_in_seconds_between_capture = 10
 capture_continuously = True
 
 # To capture images daily between the following hours, set
@@ -42,7 +44,10 @@ capture_end_hour = 18  # Exclusive
 #     'max':   (4608, 2592)
 # Default is 'max'.
 resolution = 'max'
-image_format = 'default'
+
+# Available image formats: 'bgr888', 'rgb888', 'xbgr8888', 'xrgb8888'.
+# Default is 'bgr888'.
+image_format = 'bgr888'
 image_quality = 90
 
 flip_horizontal = False
@@ -50,10 +55,9 @@ flip_vertical = False
 
 override_default_focus_settings = False
 
-# Focal modes are 'manual', 'automatic' and 'continuous'. Note that
-# 'default' = 'manual'.
+# Focal modes are 'manual', 'auto' and 'continuous'. Default is 'auto'.
 # Focal distance ranges from 0.1 cm (10) to infinity (0)
-user_focus_mode = 'manual'
+user_focus_mode = 'auto'
 user_focal_distance = 0
 
 
