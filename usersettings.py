@@ -3,34 +3,44 @@ __version__ = "0.0.1"
 __author__ = "Ben Fisher"
 # DO NOT EDIT ABOVE THIS LINE
 
-#======================================================================
+# ======================================================================
 #                      Settings for save locations
-#======================================================================
+# ======================================================================
 
 absolute_path_for_images = '/home/pi/timelapses/tmp'
 absolute_path_for_videos = '/home/pi/timelapses'
 unique_directory_name = False  # Recommend keeping this default = False
 
-#======================================================================
+# ======================================================================
 #                 Basic settings for capturing images
-#======================================================================
+# ======================================================================
 
 interval_in_seconds_between_capture = 10
 image_file_format = 'jpg'
 
 capture_continuously = True
 
-# To capture images daily between the following hours, set 
+# To capture images daily between the following hours, set
 # capture_continuously = False, otherwise the following values
-# are ignored. Use 24 hour format.
+# are ignored. Use 24-hour format.
 capture_start_hour = 4  # Inclusive
 capture_end_hour = 18  # Exclusive
 
-
-#======================================================================
+# ======================================================================
 #                    Camera configuration settings
-#======================================================================
+# ======================================================================
 
+# Available resolutions:
+#     'vga':   (640, 480)
+#     'svga':  (800, 600)
+#     'xga':   (1024, 768)
+#     'hd':    (1280, 720)
+#     'hd+':   (1600, 900)
+#     'fhd':   (1920, 1080)
+#     'qhd':   (2560, 1440)
+#     '4k':    (3840, 2160)
+#     'max':   (4608, 2592)
+# Default is 'max'.
 resolution = 'max'
 image_format = 'default'
 image_quality = 90
@@ -47,9 +57,9 @@ user_focus_mode = 'manual'
 user_focal_distance = 0
 
 
-#======================================================================
+# ======================================================================
 #                        Render to mp4 video
-#======================================================================
+# ======================================================================
 
 create_mp4 = False
 video_name = "video"
