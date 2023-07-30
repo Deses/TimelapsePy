@@ -57,10 +57,10 @@ try:
     log.logger.debug(f'Capture start hour: {users.capture_start_hour}')
     log.logger.debug(f'Capture start hour: {users.capture_end_hour}')
 
-    while infinite_loop == True:
-            if is_sleeping == True:
+    while infinite_loop:
         if (users.capture_continuously == True) | (users.capture_continuously == False
                                                    & (h >= users.capture_start_hour & h < users.capture_end_hour)):
+            if is_sleeping:
                 is_sleeping = False
                 i = 0
                 log.logger.info(log.message['awake'])
@@ -74,7 +74,7 @@ try:
             os.system(f'echo {status}')
             log.logger.info("Capture event: " + status)
         else:
-            if is_sleeping == False:
+            if not is_sleeping:
                 i = 0
                 is_sleeping = True
                 log.logger.info('sleep')
@@ -85,8 +85,8 @@ try:
         i += 1
     os.system('Exiting program event loop.')
     log.logger.info(log.message['exit_loop'])
-    if users.create_mp4 == True:
 
+    if users.create_mp4:
         # To run ffmpeg, it's recommended the tvideo.py script manually
         log.logger.info('User requested import of tvideo.py initiated.')
         import tvideo

@@ -97,10 +97,10 @@ def get_iterate_name(iterate_name: bool):
 def get_time_stamp():
     return dt.datetime.now().strftime('%Y%m%d.%H%M%S.%f')
 
-    if os.path.exists(path) == False:
 def build_path(path, iterate_name=False):
+    if not os.path.exists(path):
         Path(path).mkdir(parents=True, exist_ok=True)
-    elif iterate_name == True:
+    elif iterate_name:
         path = next_path(path)
         Path(path).mkdir(parents=True, exist_ok=True)
     return path
