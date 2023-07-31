@@ -7,7 +7,7 @@ __author__ = "Ben Fisher"
 #                      Settings for save locations
 # ======================================================================
 
-absolute_path_for_images = '/home/pi/timelapses/tmp'
+absolute_path_for_images = '/home/pi/timelapses/stills'
 absolute_path_for_videos = '/home/pi/timelapses'
 unique_directory_name = False  # Recommend keeping this default = False
 # Whether save the microseconds in the filename (%Y%m%d_%H%M%S_%f) or
@@ -42,11 +42,11 @@ capture_end_hour = 18  # Exclusive
 #     'hd':    (1280, 720)
 #     'hd+':   (1600, 900)
 #     'fhd':   (1920, 1080)
-#     'qhd':   (2560, 1440)
+#     'qhd':   (2560, 1440) // Highest resolution that works on a Pi 3B 1.3
 #     '4k':    (3840, 2160)
 #     'max':   (4608, 2592)
-# Default is 'max'.
-resolution = 'max'
+# Default is 'fhd'.
+resolution = 'fhd'
 
 # Available image formats: 'bgr888', 'rgb888', 'xbgr8888', 'xrgb8888'.
 # Default is 'bgr888'.
@@ -71,6 +71,7 @@ user_focal_distance = 0
 create_mp4 = False
 video_name = "video"
 frame_rate = 24
+delete_after_creation = True
 
 # DO NOT EDIT BELOW THIS LINE
 print(f"usersettings.py <version {__version__}> imported.")

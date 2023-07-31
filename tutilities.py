@@ -46,6 +46,14 @@ def get_resolution(resolution: str):
     except KeyError:
         return resolutions['max']
 
+def get_resolution_multiplication(resolution: str):
+    try:
+        res = resolutions[resolution.lower()]
+        return "{}x{}".format(res[0], res[1])
+    except KeyError:
+        res = resolutions['max']
+        return "{}x{}".format(res[0], res[1])
+
 def get_image_format(image_format: str):
     try:
         return image_formats[image_format.lower()]
