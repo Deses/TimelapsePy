@@ -10,6 +10,9 @@ __author__ = "Ben Fisher"
 absolute_path_for_images = '/home/pi/timelapses/tmp'
 absolute_path_for_videos = '/home/pi/timelapses'
 unique_directory_name = False  # Recommend keeping this default = False
+# Whether save the microseconds in the filename (%Y%m%d_%H%M%S_%f) or
+# just save a date and time (%Y%m%d_%H%M%S).
+ms_in_the_filename = True
 
 # ======================================================================
 #                 Basic settings for capturing images
