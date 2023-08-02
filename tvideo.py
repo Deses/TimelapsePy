@@ -32,8 +32,7 @@ try:
         log.logger.info(log.message['mv_files_end'])
 
     log.logger.info(log.message['render_start'])
-    ffResult = os.system(f'ffmpeg -r {users.frame_rate} -framerate {users.frame_rate} ' +
-                         f'-pattern_type glob -i "{imgs_in_work_folder}" ' +
+    ffResult = os.system(f'ffmpeg -r {users.frame_rate} -pattern_type glob -i "{imgs_in_work_folder}" ' +
                          f'-s:v {video_resolution} -c:v libx264 -pix_fmt yuvj420p -y {output_path}')
     if ffResult == 0:
         log.logger.info(log.message['render_end'])
